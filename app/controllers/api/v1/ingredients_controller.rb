@@ -6,7 +6,7 @@ module Api
       before_action :find_ingredient, only: [:show, :edit, :destroy, :update]
 
       def index
-        render json: Ingredient.all
+        render json: Ingredient.all, include: ['recipes']
       end
 
       def show
@@ -46,7 +46,7 @@ module Api
       private
 
       def ingredient_params
-        params.require(:ingredient).permit(:price, :name, :availability, recipe_ids:[])
+        params.require(:ingredient).permit(:price_level, :name, :availability, recipe_ids: [])
       end
 
     end

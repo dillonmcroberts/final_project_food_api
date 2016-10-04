@@ -4,11 +4,11 @@ module Api
       before_action :find_user, only: [:show, :edit, :destroy, :update]
 
       def index
-        render json: User.all
+        render json: User.all.includes(:recipes,:menus), include: ['recipes','menus']
       end
 
       def show
-        render json: User.find(params[:id])
+        render json: User.find(params[:id]), include: ['recipes','menus']
       end
 
       def create
@@ -46,7 +46,7 @@ module Api
         @user = User.find(params[:id])
       end
         def user_params
-          params.require(:user).permit(:name, :password, :email, recipe_ids:[], menu_ids:[])
+          params.require(:user).permit(:name, :password, :email)
         end
     end
   end

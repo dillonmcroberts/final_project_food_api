@@ -3,14 +3,14 @@ module Api
 
     class RecipesController < ApplicationController
 
-      before_action :find_recipe, only: [:show, :edit, :destroy, :update]
+      # before_action :find_recipe, only: [:show, :edit, :destroy, :update]
 
       def index
-        render json: Recipe.all
+        render json: Recipe.all.includes(:ingredients,:users,:menus), include: ['ingredients','users','menus']
       end
 
       def show
-        render json: Recipe.find(params[:id])
+        render json: Recipe.find(params[:id]), include: ['ingredients','users','menus']
       end
 
       def create
@@ -44,7 +44,7 @@ module Api
       private
 
       def recipe_params
-        params.require(:recipe).permit(:text)
+        params.require(:recipe).permit(:name,:instructions,:description, :cuisine_type, :cooking_time, :difficulty_level, ingredient_ids: [])
       end
 
     end

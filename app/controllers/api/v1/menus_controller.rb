@@ -3,14 +3,14 @@ module Api
 
     class MenusController < ApplicationController
 
-      before_action :find_menu, only: [:show, :edit, :destroy, :update]
+      # before_action :find_menu, only: [:show, :edit, :destroy, :update]
 
       def index
-        render json: Menu.all
+        render json: Menu.all.includes(:recipes, :users), include: ['recipes', 'users']
       end
 
       def show
-        render json: Menu.find(params[:id])
+        render json: Menu.find(params[:id]), include: ['recipes', 'users']
       end
 
       def create
@@ -44,7 +44,7 @@ module Api
       private
 
       def menu_params
-        params.require(:menu).permit(:text)
+        params.require(:menu).permit(:name, :occasion, :description)
       end
 
     end
