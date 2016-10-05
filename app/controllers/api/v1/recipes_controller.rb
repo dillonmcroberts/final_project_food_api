@@ -44,7 +44,7 @@ module Api
       private
 
       def recipe_params
-        params.require(:recipe).permit(:name,:instructions,:description, :cuisine_type, :cooking_time, :difficulty_level, ingredient_ids: [])
+        params.require(:recipe).permit(:name,:instructions,:description, :cuisine_type, :cooking_time, :difficulty_level, :course, ingredient_ids: [])
       end
 
     end

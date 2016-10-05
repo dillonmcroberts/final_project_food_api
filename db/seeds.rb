@@ -16,9 +16,9 @@ tomato = Ingredient.create(name: "tomato", price_level: "2", availability: "3")
 spaghetti = Ingredient.create(name: "spaghetti", price_level: "1", availability: "5")
 onion = Ingredient.create(name: "onion", price_level: "2", availability: "3")
 
-beef_ragu = Recipe.create(name: "ragu", instructions: "Mix all the ingredients and put sauce on it", description: "A hearty dinner", cooking_time: "3 hours", cuisine_type: "Italian", difficulty_level: "easy")
-tomato_sauce = Recipe.create(name: "tomato sauce", instructions: "Simmer for a long time", description: "Red sauce for spaghetti", cooking_time: "3 hours", cuisine_type: "Italian", difficulty_level: "medium")
-kebab = Recipe.create(name: "kebab", instructions: "Put everything on a stick", description: "Don't poke your eye out", cooking_time: "30 minutes", cuisine_type: "Middle-Eastern", difficulty_level: "hard")
+beef_ragu = Recipe.create(name: "ragu", instructions: "Mix all the ingredients and put sauce on it", description: "A hearty dinner", cooking_time: "3 hours", cuisine_type: "Italian", difficulty_level: "easy",course: "main")
+tomato_sauce = Recipe.create(name: "tomato sauce", instructions: "Simmer for a long time", description: "Red sauce for spaghetti", cooking_time: "3 hours", cuisine_type: "Italian", difficulty_level: "medium",course: "side")
+kebab = Recipe.create(name: "kebab", instructions: "Put everything on a stick", description: "Don't poke your eye out", cooking_time: "30 minutes", cuisine_type: "Middle-Eastern", difficulty_level: "hard",course: "appetizer")
 
 dinner_with_friends = Menu.create(name: "Dinner With Friends", occasion: "Dinner Party", description: "Easy casual night with friends")
 
