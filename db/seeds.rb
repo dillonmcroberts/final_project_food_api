@@ -32,3 +32,18 @@ dinner_with_friends.recipes.push(beef_ragu, tomato_sauce, kebab)
 dillon.recipes << beef_ragu
 khaleda.menus << dinner_with_friends
 silvana.recipes << tomato_sauce
+
+50.times do |n|
+  ing = Ingredient.new
+  ing.name = Faker::Food.ingredient
+  ing.price_level = rand(1..5).to_s
+  ing.availability = rand(1..5).to_s
+  ing.save
+end
+20.times do |n|
+  ing = Ingredient.new
+  ing.name = Faker::Food.spice
+  ing.price_level = rand(1..5).to_s
+  ing.availability = rand(1..5).to_s
+  ing.save
+end
