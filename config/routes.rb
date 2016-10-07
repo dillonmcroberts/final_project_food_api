@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/hello', to: 'sessions#hello'
       post '/login', to: 'sessions#create'
+      post '/login', to: 'sessions#create'
       resources :sessions
       resources :likes
       resources :menus
