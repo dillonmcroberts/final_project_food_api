@@ -2,6 +2,7 @@ module Api
   module V1
 
     class RecipesController < ApplicationController
+      skip_before_action :authenticate
 
       # before_action :find_recipe, only: [:show, :edit, :destroy, :update]
 

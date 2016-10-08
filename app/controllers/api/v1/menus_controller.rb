@@ -2,6 +2,7 @@ module Api
   module V1
 
     class MenusController < ApplicationController
+      skip_before_action :authenticate
 
       # before_action :find_menu, only: [:show, :edit, :destroy, :update]
 
