@@ -6,7 +6,7 @@ class IngredientsAdapter
 
   def get_calories(name)
     name_formatted = name.split(" ").join("%20")
-    response = RestClient.get("https://api.nutritionix.com/v1_1/search/#{name_formatted}?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=dd3ca560&appKey=cbb1bfa358b96bc83ec79ac4fa1095f7")
+    response = RestClient.get("https://api.nutritionix.com/v1_1/search/#{name_formatted}?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=5ba5ab28&appKey=e9cee5381f8aaa345421ba53278b58ca")
     if !!response
       ingredient_cals = calories_per_tablespoon(JSON.parse(response))
     else

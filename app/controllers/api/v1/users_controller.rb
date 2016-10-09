@@ -2,6 +2,7 @@ module Api
   module V1
     class UsersController < ApplicationController
       before_action :find_user, only: [:show, :edit, :destroy, :update]
+      skip_before_action :authenticate, only: [:create]
 
       def index
         render json: User.all.includes(:recipes,:menus), include: ['recipes','menus']
