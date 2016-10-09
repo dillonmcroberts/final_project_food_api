@@ -47,3 +47,7 @@ end
   ing.availability = rand(1..5).to_s
   ing.save
 end
+
+i = IngredientsAdapter.new()
+i.set_calories_for_ingredients
+i.set_descriptions_for_ingredients
