@@ -46,7 +46,7 @@ module Api
         @user = User.find(params[:id])
       end
         def user_params
-          params.require(:user).permit(:name, :password, :email)
+          params.require(:user).permit(:name, :password, :email,:location,:fav_foods)
         end
     end
   end
