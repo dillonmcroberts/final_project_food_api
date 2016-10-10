@@ -16,6 +16,7 @@ module Api
 
       def create
         recipe = Recipe.new(recipe_params)
+        binding.pry
         if recipe.save
           render json: recipe
         else
@@ -45,7 +46,7 @@ module Api
       private
 
       def recipe_params
-        params.require(:recipe).permit(:name,:instructions,:description, :cuisine_type, :cooking_time, :difficulty_level, :course, ingredient_ids: [])
+        params.require(:recipe).permit(:name,:instructions,:description, :cuisine_type, :cooking_time, :difficulty_level, :course, :creator_id, ingredient_ids: [])
       end
 
     end
