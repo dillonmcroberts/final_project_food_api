@@ -3,7 +3,7 @@ module Api
 
     class CommentsController < ApplicationController
 
-      before_action find_comment :show, :edit, :destroy, :update
+      # before_action find_comment :show, :edit, :destroy, :update
 
       def index
         render json: Comment.all

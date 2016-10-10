@@ -7,11 +7,11 @@ module Api
       # before_action :find_recipe, only: [:show, :edit, :destroy, :update]
 
       def index
-        render json: Recipe.all.includes(:ingredients,:users,:menus), include: ['ingredients','users','menus']
+        render json: Recipe.all
       end
 
       def show
-        render json: Recipe.find(params[:id]), include: ['ingredients','users','menus']
+        render json: Recipe.find(params[:id])
       end
 
       def create
