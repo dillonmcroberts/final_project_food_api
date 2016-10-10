@@ -16,7 +16,6 @@ module Api
 
       def create
         recipe = Recipe.new(recipe_params)
-        binding.pry
         if recipe.save
           render json: recipe
         else

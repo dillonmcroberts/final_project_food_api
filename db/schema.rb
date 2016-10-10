@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009181534) do
+ActiveRecord::Schema.define(version: 14) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20161009181534) do
     t.string   "cuisine_type"
     t.string   "cooking_time"
     t.string   "difficulty_level"
+    t.string   "creator_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "course"
