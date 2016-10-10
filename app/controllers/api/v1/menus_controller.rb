@@ -45,7 +45,7 @@ module Api
       private
 
       def menu_params
-        params.require(:menu).permit(:name, :occasion, :description, recipe_ids:[])
+        params.require(:menu).permit(:name, :occasion, :description, :creator_id, recipe_ids:[])
       end
 
     end
