@@ -5,11 +5,11 @@ module Api
       skip_before_action :authenticate, only: [:create]
 
       def index
-        render json: User.all.includes(:recipes,:menus), include: ['recipes','menus']
+        render json: User.all.includes(:recipes,:menus)
       end
 
       def show
-        render json: User.find(params[:id]), include: ['recipes','menus']
+        render json: User.find(params[:id])
       end
 
       def create
