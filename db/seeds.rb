@@ -82,13 +82,6 @@ appetizers = [
     {"id":23184,"title":"Cucumber Pomegranate And Mint Raita - A Yogurt Dip","readyInMinutes":45,"image":"cucumber-pomegranate-and-mint-raita-a-yogurt-dip-2-23184.jpg","imageUrls":["cucumber-pomegranate-and-mint-raita-a-yogurt-dip-2-23184.jpg"]},{"id":435725,"title":"Chicken Crescent Appetizer","readyInMinutes":30,"image":"Chicken-Crescent-Appetizer-435725.jpg","imageUrls":["Chicken-Crescent-Appetizer-435725.jpg"]},
     {"id":548383,"title":"Grilled Nachos","readyInMinutes":7,"image":"Grilled-Nachos-548383.jpg","imageUrls":["Grilled-Nachos-548383.jpg"]},{"id":525028,"title":"Strawberry Salsa","readyInMinutes":20,"image":"Strawberry-Salsa-525028.jpeg","imageUrls":["Strawberry-Salsa-525028.jpeg"]},
     {"id":155743,"title":"Chick-Pea Cumin Dip","readyInMinutes":45,"image":"chick-pea-cumin-dip-155743.jpg","imageUrls":["chick-pea-cumin-dip-155743.jpg"]},{"id":798562,"title":"Chinese BBQ Pork lettuce wraps","readyInMinutes":55,"image":"chinese-bbq-pork-lettuce-wraps-798562.jpg","imageUrls":["chinese-bbq-pork-lettuce-wraps-798562.jpg"]}]
-    def get_recipes_details(id)
-      response = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/#{id}/information?includeNutrition=false",
-    headers:{
-      "X-Mashape-Key" => "Ut1Rbuerl6mshK22PwPulpODCNnxp1zNKdqjsndeeiWMHS8t9U",
-      "Accept" => "application/json"
-    }
-    end
 
     appetizers.each do |recipe|
       new_app = Recipe.new
